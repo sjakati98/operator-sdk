@@ -66,6 +66,28 @@ func (e ErrUnknownOperatorType) Error() string {
 	return fmt.Sprintf(`unknown operator type "%v"`, e.Type)
 }
 
+type ErrUnknownInputOperatorType struct {
+	Type string
+}
+
+func (e ErrUnknownInputOperatorType) Error() string {
+	if e.Type == "" {
+		return "unknown input operator type"
+	}
+	return fmt.Sprintf(`unknown input operator type "%v"`, e.Type)
+}
+
+type ErrUnknownOutputOperatorType struct {
+	Type string
+}
+
+func (e ErrUnknownOutputOperatorType) Error() string {
+	if e.Type == "" {
+		return "unknown output operator type"
+	}
+	return fmt.Sprintf(`unknown output operator type "%v"`, e.Type)
+}
+
 type DepManagerType string
 
 const (

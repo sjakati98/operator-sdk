@@ -15,14 +15,16 @@
 package main
 
 import (
-	"github.com/operator-framework/operator-sdk/internal/util/projutil"
 	"os"
+
+	"github.com/operator-framework/operator-sdk/internal/util/projutil"
 
 	// Import all Kubernetes client auth plugins (e.g. Azure, GCP, OIDC, etc.)
 	// to ensure that `run` and `up local` can make use of them.
 	"github.com/operator-framework/operator-sdk/cmd/operator-sdk/add"
 	"github.com/operator-framework/operator-sdk/cmd/operator-sdk/build"
 	"github.com/operator-framework/operator-sdk/cmd/operator-sdk/completion"
+	"github.com/operator-framework/operator-sdk/cmd/operator-sdk/convert"
 	"github.com/operator-framework/operator-sdk/cmd/operator-sdk/generate"
 	"github.com/operator-framework/operator-sdk/cmd/operator-sdk/migrate"
 	"github.com/operator-framework/operator-sdk/cmd/operator-sdk/new"
@@ -64,6 +66,7 @@ func main() {
 	root.AddCommand(generate.NewCmd())
 	root.AddCommand(up.NewCmd())
 	root.AddCommand(completion.NewCmd())
+	root.AddCommand(convert.NewCmd())
 	root.AddCommand(test.NewCmd())
 	root.AddCommand(scorecard.NewCmd())
 	root.AddCommand(printdeps.NewCmd())
